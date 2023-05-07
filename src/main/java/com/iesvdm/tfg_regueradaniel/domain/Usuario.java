@@ -4,39 +4,40 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity
 @Table(	name = "users")
 public class Usuario {
 
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
+    //@NotBlank
     @Size(max = 20)
     private String username;
 
-    @NotBlank
+    //@NotBlank
     @Size(max = 20)
     private String nombrePila;
 
-    @NotBlank
+    //@NotBlank
     @Size(max = 50)
     private String apellidos;
+
     @Size(max = 9)
     private String tlf;
 
-    @Id
     @NotBlank
     @Size(max = 50)
+    @Column(unique = true, nullable = false)
     @Email
     private String email;
 
     @NotBlank
     @Size(max = 120)
     private String password;
-
-
 
     @Size(max = 50)
     private String urlImg;
@@ -102,14 +103,12 @@ public class Usuario {
         return password;
     }
 
-    public String getUrlImg() { return urlImg; }
-
-    public void setUrlImg(String urlImg) { this.urlImg = urlImg; }
-
     public void setPassword(String password) {
         this.password = password;
     }
 
+    public String getUrlImg() { return urlImg; }
 
+    public void setUrlImg(String urlImg) { this.urlImg = urlImg; }
 
 }
