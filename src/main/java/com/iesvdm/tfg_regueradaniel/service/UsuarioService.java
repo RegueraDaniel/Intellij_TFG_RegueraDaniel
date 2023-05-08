@@ -4,28 +4,27 @@ import com.iesvdm.tfg_regueradaniel.domain.Usuario;
 import com.iesvdm.tfg_regueradaniel.repository.UsuarioRepository;
 import com.iesvdm.tfg_regueradaniel.exception.UsuarioNotFoundException;
 import org.jetbrains.annotations.NotNull;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
+import com.iesvdm.tfg_regueradaniel.security.SecurityConfig;
+
 import java.util.*;
-import static java.util.Comparator.*;
-import static java.util.stream.Collectors.*;
 @Service
 public class UsuarioService {
     private UsuarioRepository usuarioRepository;
-    private PasswordEncoder passwordEncoder;
 
-    public UsuarioService(UsuarioRepository usuarioRepository, PasswordEncoder passwordEncoder){
+    private SecurityConfig securityConfig;
+
+    public UsuarioService(UsuarioRepository usuarioRepository, SecurityConfig securityConfig){
         this.usuarioRepository = usuarioRepository;
-        this.passwordEncoder = passwordEncoder;
+        this.securityConfig = securityConfig;
     }
 
     public List<Usuario> all(){return this.usuarioRepository.findAll();}
 
     public Usuario save(@NotNull Usuario usuario){
         //encripta pass y guarda el usuario
-        usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
+        usuario.setPassword(securityConfig.encrypt(usuario.getPassword()));
         return this.usuarioRepository.save(usuario);
     }
 

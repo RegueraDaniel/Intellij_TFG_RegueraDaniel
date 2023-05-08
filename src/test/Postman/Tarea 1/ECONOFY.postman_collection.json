@@ -1,0 +1,620 @@
+{
+	"info": {
+		"_postman_id": "6b8aad83-1dc1-441e-b61b-c9e008e0b14b",
+		"name": "ECONOFY",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24434208"
+	},
+	"item": [
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Nuevo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"nombrePila\": \"danichan\",\r\n    \"apellidos\": \"tachan\",\r\n    \"tlf\": \"123456789\",\r\n    \"email\": \"danielreguerabazan@gmail.com\",\r\n    \"password\": \"admin1234\",\r\n    \"urlImg\": \"none\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Nuevo",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"admin\",\r\n    \"nombrePila\": \"danichan\",\r\n    \"apellidos\": \"tachan\",\r\n    \"tlf\": \"123456789\",\r\n    \"email\": \"danielreguerabazan@gmail.com\",\r\n    \"password\": \"admin1234\",\r\n    \"urlImg\": \"none\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/usuarios",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"usuarios"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 May 2023 21:12:30 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 9,\n    \"username\": \"admin\",\n    \"nombrePila\": \"danichan\",\n    \"apellidos\": \"tachan\",\n    \"tlf\": \"123456789\",\n    \"email\": \"danielreguerabazan@gmail.com\",\n    \"password\": \"X9cLA4/ZfCGhnGmqV6GhpQ==\",\n    \"urlImg\": \"none\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Nuevo 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"R.E.\",\r\n    \"nombrePila\": \"Pepe\",\r\n    \"apellidos\": \"Lente\",\r\n    \"tlf\": \"012345678\",\r\n    \"email\": \"repelente@gmail.com\",\r\n    \"password\": \"admin1234\",\r\n    \"urlImg\": \"none2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Nuevo 2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"R.E.\",\r\n    \"nombrePila\": \"Pepe\",\r\n    \"apellidos\": \"Lente\",\r\n    \"tlf\": \"012345678\",\r\n    \"email\": \"repelente@gmail.com\",\r\n    \"password\": \"admin1234\",\r\n    \"urlImg\": \"none2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/usuarios",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"usuarios"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 May 2023 21:12:38 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 10,\n    \"username\": \"R.E.\",\n    \"nombrePila\": \"Pepe\",\n    \"apellidos\": \"Lente\",\n    \"tlf\": \"012345678\",\n    \"email\": \"repelente@gmail.com\",\n    \"password\": \"X9cLA4/ZfCGhnGmqV6GhpQ==\",\n    \"urlImg\": \"none2\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Borrar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/usuarios/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								"6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Borrar",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/usuarios/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"usuarios",
+										"6"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 May 2023 21:12:25 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Encontrar uno",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/usuarios/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								"10"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Encontrar uno",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/usuarios/10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"usuarios",
+										"10"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 May 2023 18:03:40 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 10,\n    \"username\": \"R.E.\",\n    \"nombrePila\": \"Pepe\",\n    \"apellidos\": \"Lente\",\n    \"tlf\": \"012345678\",\n    \"email\": \"repelente@gmail.com\",\n    \"password\": \"X9cLA4/ZfCGhnGmqV6GhpQ==\",\n    \"urlImg\": \"none2\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Encontrar sin resultado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/usuarios/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								"6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Encontrar sin resultado",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/usuarios/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"usuarios",
+										"6"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 May 2023 18:04:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"timestamp\": \"2023-05-08T18:04:29.110+00:00\",\n    \"status\": 500,\n    \"error\": \"Internal Server Error\",\n    \"trace\": \"com.iesvdm.tfg_regueradaniel.exception.UsuarioNotFoundException: Usuario no encontrado con el correo 6\\r\\n\\tat com.iesvdm.tfg_regueradaniel.service.UsuarioService.lambda$one$0(UsuarioService.java:46)\\r\\n\\tat java.base/java.util.Optional.orElseThrow(Optional.java:403)\\r\\n\\tat com.iesvdm.tfg_regueradaniel.service.UsuarioService.one(UsuarioService.java:46)\\r\\n\\tat com.iesvdm.tfg_regueradaniel.controller.UsuarioController.one(UsuarioController.java:30)\\r\\n\\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)\\r\\n\\tat java.base/java.lang.reflect.Method.invoke(Method.java:578)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)\\r\\n\\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)\\r\\n\\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:705)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)\\r\\n\\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)\\r\\n\\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)\\r\\n\\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)\\r\\n\\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)\\r\\n\\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)\\r\\n\\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)\\r\\n\\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)\\r\\n\\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)\\r\\n\\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)\\r\\n\\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)\\r\\n\\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)\\r\\n\\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)\\r\\n\\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)\\r\\n\\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)\\r\\n\\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)\\r\\n\\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)\\r\\n\\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)\\r\\n\\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)\\r\\n\\tat java.base/java.lang.Thread.run(Thread.java:1589)\\r\\n\",\n    \"message\": \"Usuario no encontrado con el correo 6\",\n    \"path\": \"/api/usuarios/6\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/usuarios/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Todos",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/usuarios/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"usuarios",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 May 2023 18:07:09 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 9,\n        \"username\": \"admin\",\n        \"nombrePila\": \"danichan\",\n        \"apellidos\": \"tachan\",\n        \"tlf\": \"123456789\",\n        \"email\": \"danielreguerabazan@gmail.com\",\n        \"password\": \"X9cLA4/ZfCGhnGmqV6GhpQ==\",\n        \"urlImg\": \"none\"\n    },\n    {\n        \"id\": 10,\n        \"username\": \"R.E.\",\n        \"nombrePila\": \"Pepe\",\n        \"apellidos\": \"Lente\",\n        \"tlf\": \"012345678\",\n        \"email\": \"repelente@gmail.com\",\n        \"password\": \"X9cLA4/ZfCGhnGmqV6GhpQ==\",\n        \"urlImg\": \"none2\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Editar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": 9,\r\n        \"username\": \"admin\",\r\n        \"nombrePila\": \"danichan\",\r\n        \"apellidos\": \"tachan\",\r\n        \"tlf\": \"666666666\",\r\n        \"email\": \"danielreguerabazan@gmail.com\",\r\n        \"password\": \"X9cLA4/ZfCGhnGmqV6GhpQ==\",\r\n        \"urlImg\": \"none\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/usuarios/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								"9"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Editar",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\r\n        \"id\": 9,\r\n        \"username\": \"admin\",\r\n        \"nombrePila\": \"danichan\",\r\n        \"apellidos\": \"tachan\",\r\n        \"tlf\": \"666666666\",\r\n        \"email\": \"danielreguerabazan@gmail.com\",\r\n        \"password\": \"X9cLA4/ZfCGhnGmqV6GhpQ==\",\r\n        \"urlImg\": \"none\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/usuarios/9",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"usuarios",
+										"9"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 May 2023 18:13:21 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 9,\n    \"username\": \"admin\",\n    \"nombrePila\": \"danichan\",\n    \"apellidos\": \"tachan\",\n    \"tlf\": \"666666666\",\n    \"email\": \"danielreguerabazan@gmail.com\",\n    \"password\": \"X9cLA4/ZfCGhnGmqV6GhpQ==\",\n    \"urlImg\": \"none\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
