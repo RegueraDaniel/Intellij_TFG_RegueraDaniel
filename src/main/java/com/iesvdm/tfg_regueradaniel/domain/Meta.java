@@ -1,5 +1,6 @@
 package com.iesvdm.tfg_regueradaniel.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
@@ -28,8 +29,10 @@ public class Meta {
 
     private String fechaFinal;
 
-    @ManyToOne()
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_usu", nullable = false)
+    @JsonIgnore
+    @ToString.Exclude
     private Usuario usuario;
 
 

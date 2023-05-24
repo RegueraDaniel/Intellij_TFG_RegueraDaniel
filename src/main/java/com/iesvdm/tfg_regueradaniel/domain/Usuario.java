@@ -1,6 +1,5 @@
 package com.iesvdm.tfg_regueradaniel.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -9,7 +8,6 @@ import lombok.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
-import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -56,21 +54,13 @@ public class Usuario {
     private String urlImg;
 
     @OneToMany(mappedBy = "usuario")
-    @JsonIgnore
-    @ToString.Exclude
+    private List<Categoria> categorias;
+
+    @OneToMany(mappedBy = "usuario")
     private List<Meta> metas;
 
     @OneToMany(mappedBy = "usuario")
-    @JsonIgnore
-    @ToString.Exclude
     private List<Aviso> avisos;
-
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "usu_categoria",
-            joinColumns =  @JoinColumn(name= "id_usu", referencedColumnName = "id_usu"),
-            inverseJoinColumns = @JoinColumn(name = "id_cat", referencedColumnName = "id_cat"))
-    Set<Categoria> categorias;
 
 
     public Long getId() {

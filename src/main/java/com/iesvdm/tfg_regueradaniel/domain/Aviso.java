@@ -1,6 +1,7 @@
 package com.iesvdm.tfg_regueradaniel.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
@@ -30,10 +31,13 @@ public class Aviso {
 
     private String icono;
 
-    @JsonFormat(pattern = "yyyy-MM-dd-HH:mm:ss",  shape = JsonFormat.Shape.STRING)
-    private Date fecha;
+    //@JsonFormat(pattern = "yyyy-MM-dd-HH:mm:ss",  shape = JsonFormat.Shape.STRING)
+    //private Date fecha;
+    private String fecha;
 
-    @ManyToOne()
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JsonIgnore
+    @ToString.Exclude
     @JoinColumn(name = "id_usu", nullable = false)
     private Usuario usuario;
 

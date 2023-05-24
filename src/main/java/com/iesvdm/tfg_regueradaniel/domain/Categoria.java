@@ -5,9 +5,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -25,9 +23,10 @@ public class Categoria {
     @Column(name="id_cat")
     private Long id;
 
-    @Enumerated(EnumType.STRING)
+    //@Enumerated(EnumType.STRING)
     @Size(max = 20)
-    private ECategoria nombreCat;
+    //ECategoria
+    private String nombreCat;
 
     @Size(max = 12) //hexadecimal
     private String icono;
@@ -35,20 +34,16 @@ public class Categoria {
     @Size(max = 7) //hexadecimal
     private String color;
 
-    @OneToMany(mappedBy = "categoria")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JsonIgnore
     @ToString.Exclude
+    @JoinColumn(name = "id_usu", nullable = false)
+    private Usuario usuario;
+
+    @OneToMany(mappedBy = "categoria")
     private List<Movimiento> movimientos;
 
     @OneToMany(mappedBy = "categoria")
-    @JsonIgnore
-    @ToString.Exclude
     private List<Gastomaximo> gastosmaximos;
-
-    @ManyToMany(
-            mappedBy = "categorias", fetch = FetchType.EAGER)
-    @ToString.Exclude
-    @JsonIgnore
-    Set<Usuario> usuarios = new HashSet<>();
 
 }

@@ -1,5 +1,6 @@
 package com.iesvdm.tfg_regueradaniel.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -28,7 +29,9 @@ public class Gastomaximo {
 
     private BigDecimal importe;
 
-    @ManyToOne()
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JsonIgnore
+    @ToString.Exclude
     @JoinColumn(name = "id_cat", nullable = false)
     private Categoria categoria;
 }

@@ -27,6 +27,7 @@ public class Movimiento {
     @JsonFormat(pattern = "yyyy-MM-dd-HH:mm:ss",  shape = JsonFormat.Shape.STRING)
     private Date fecha;
 
+
     private BigDecimal importe;
 
     private String descripcion;
@@ -34,7 +35,9 @@ public class Movimiento {
     //url a foto
     private String foto;
 
-    @ManyToOne()
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JsonIgnore
+    @ToString.Exclude
     @JoinColumn(name = "id_cat", nullable = false)
     private Categoria categoria;
 

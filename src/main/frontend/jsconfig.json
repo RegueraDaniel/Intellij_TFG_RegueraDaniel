@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "baseUrl": "../../../../../Downloads/Proyecto-20230517T204642Z-001/Proyecto/econofy/econofy",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
