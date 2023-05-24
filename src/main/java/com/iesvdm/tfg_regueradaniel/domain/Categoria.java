@@ -1,6 +1,7 @@
 package com.iesvdm.tfg_regueradaniel.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.*;
@@ -16,6 +17,7 @@ import java.util.List;
 @EqualsAndHashCode(of = "id")
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Table(name = "categories")
 public class Categoria {
     @Id
@@ -35,9 +37,9 @@ public class Categoria {
     private String color;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "id_usu", nullable = false)
     @JsonIgnore
     @ToString.Exclude
-    @JoinColumn(name = "id_usu", nullable = false)
     private Usuario usuario;
 
     @OneToMany(mappedBy = "categoria")

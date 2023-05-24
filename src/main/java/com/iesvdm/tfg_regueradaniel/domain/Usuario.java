@@ -1,5 +1,6 @@
 package com.iesvdm.tfg_regueradaniel.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -17,12 +18,13 @@ import java.util.List;
 @EqualsAndHashCode(of = "id")
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Table(	name = "users")
 public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_usu")
+    //@Column(name="id_usu")
     private Long id;
 
     //@NotBlank
