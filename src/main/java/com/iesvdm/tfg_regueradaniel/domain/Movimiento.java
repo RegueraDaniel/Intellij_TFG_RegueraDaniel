@@ -35,7 +35,7 @@ public class Movimiento {
     //url a foto
     private String foto;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnore
     @ToString.Exclude
     @JoinColumn(name = "id_cat", nullable = false)

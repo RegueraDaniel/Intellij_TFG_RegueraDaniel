@@ -35,7 +35,7 @@ public class Aviso {
     //private Date fecha;
     private String fecha;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnore
     @ToString.Exclude
     @JoinColumn(name = "id_usu", nullable = false)

@@ -36,7 +36,7 @@ public class Categoria {
     @Size(max = 7) //hexadecimal
     private String color;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_usu", nullable = false)
     @JsonIgnore
     @ToString.Exclude

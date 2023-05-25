@@ -29,7 +29,7 @@ public class Meta {
 
     private String fechaFinal;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_usu", nullable = false)
     @JsonIgnore
     @ToString.Exclude
