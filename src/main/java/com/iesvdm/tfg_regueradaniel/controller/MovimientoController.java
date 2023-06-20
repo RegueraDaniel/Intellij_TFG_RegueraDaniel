@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:8000")
 @RequestMapping("/api/movimientos")
 public class MovimientoController {
     private final MovimientoService movimientoService;
@@ -20,6 +20,9 @@ public class MovimientoController {
         return this.movimientoService.all();
     }
 
+    /* 11 MOVIMIENTOS ***/
+    @GetMapping("/misMovimientos/{id}")
+    public List<Movimiento> misMovimientos(@PathVariable("id") Long id){ return this.movimientoService.misMovimientos(id);}
     @PostMapping({"","/"})
     public Movimiento newMov(@RequestBody Movimiento movimiento) {return this.movimientoService.save(movimiento);}
 

@@ -78,6 +78,14 @@
                     </excludes>
                 </configuration>
             </plugin>
+            <!-- intento de sacar la documentacion automaticamente
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.7.1</version>
+                <version>3.13.0</version>
+                <version>4.0.0-M5</version>
+            </plugin>-->
         </plugins>
     </build>
 

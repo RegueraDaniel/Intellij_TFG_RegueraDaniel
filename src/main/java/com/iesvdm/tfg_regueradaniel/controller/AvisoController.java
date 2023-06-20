@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:8000")
 @RequestMapping("/api/avisos")
 public class AvisoController  {
     private final AvisoService avisoService;

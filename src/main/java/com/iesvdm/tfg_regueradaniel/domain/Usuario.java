@@ -8,6 +8,7 @@ import jakarta.validation.constraints.Size;
 import lombok.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Data
@@ -55,13 +56,18 @@ public class Usuario {
     @Size(max = 50)
     private String urlImg;
 
-    @OneToMany(mappedBy = "usuario")
+    private BigDecimal maxGastoGlobal;
+
+    @OneToMany(mappedBy = "usuario",
+            cascade = {CascadeType.REMOVE})
     private List<Categoria> categorias;
 
-    @OneToMany(mappedBy = "usuario")
+    @OneToMany(mappedBy = "usuario",
+            cascade = {CascadeType.REMOVE})
     private List<Meta> metas;
 
-    @OneToMany(mappedBy = "usuario")
+    @OneToMany(mappedBy = "usuario",
+            cascade = {CascadeType.REMOVE})
     private List<Aviso> avisos;
 
 

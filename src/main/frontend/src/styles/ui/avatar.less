@@ -1,0 +1,33 @@
+/*Avatar Styles*/
+.avatar-img {
+  height: @size-40;
+  width: @size-40;
+  position: relative;
+  .border-radius(@border-radius-circle);
+  border: @border-style-base @border-width-base @border-color;
+}
+
+.avatar-img-lg {
+  height: @size-100;
+  width: @size-100;
+}
+
+.ant-avatar-circle {
+  .border-radius(@border-radius-circle);
+}
+
+.avatar {
+  .flex-display(flex, row, wrap);
+  overflow: hidden;
+  .justify-content(center);
+  .align-items(center);
+  height: @size-40;
+  width: @size-40;
+  position: relative;
+  .border-radius(@border-radius-circle);
+  border: @border-style-base @border-width-base @border-color;
+}
+
+.user-thumb {
+  position: relative;
+}

@@ -1,0 +1,35 @@
+/*Tabs Styles*/
+.tabs-half {
+  & .ant-tabs-bar {
+    margin-bottom: 0;
+  }
+
+  & .ant-tabs-nav {
+    display: block;
+
+    & .ant-tabs-tab {
+      margin: 0;
+      width: 50%;
+      text-align: center;
+    }
+
+    & .ant-tabs-ink-bar {
+      width: 50%;
+    }
+  }
+
+}
+////////////////// Custom
+.ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-tab {
+  border: 1px solid @secondary-color;
+  border-bottom: 0;
+  border-radius: 4px 4px 0 0;
+  background: @color-primary;
+  color: #fff;
+}
+.ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-tab-active {
+  background: #fff;
+  //border-color: #e8e8e8;
+  border-color: @color-primary;
+  color: @color-primary;
+}

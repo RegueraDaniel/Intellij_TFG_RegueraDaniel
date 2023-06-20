@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:8000")
 @RequestMapping("/api/categorias")
 public class CategoriaControler {
     private final CategoriaService categoriaService;
@@ -20,20 +20,44 @@ public class CategoriaControler {
         this.usuarioController = usuarioController;
     }
 
+    /*GENERICOS PARA PRUEBAS ---ANULAR PARA USO NORMAL---**/
     @GetMapping({"","/"})
     public List<Categoria> all() {
         return this.categoriaService.all();
     }
 
+    /*10 DASHBOARD ***/
+    @GetMapping(("/estadisticasMes/{id}"))
+    public List<Object[]> estadisticasMes(@PathVariable("id") Long id) {
+        return this.categoriaService.estadisticasMes(id);
+    }
+    @GetMapping(("/misGastosMaxInicializados/{id}"))
+    public List<Categoria> misGastosMaxInicializados(@PathVariable("id") Long id) {
+        return this.categoriaService.misGastosMaxInicializados(id);
+    }
+    @GetMapping(("/historico/{id}"))
+    public List<Object[]> historico(@PathVariable("id") Long id) {
+        return this.categoriaService.historico(id);
+    }
+
+    /* 11 MOVIMIENTOS ***/
+    @GetMapping(("/boxCat/{id}"))
+    public List<String> catBox(@PathVariable("id") Long id) {
+        return this.categoriaService.catBox(id);
+    }
+
+    /* 12 CATEGORIAS ***/
+    @GetMapping(("/misCategorias/{id}"))
+    public List<Categoria> misCategorias(@PathVariable("id") Long id) {
+        return this.categoriaService.misCategorias(id);
+    }
+
     @PostMapping({"","/"})
     public Categoria newCat(@RequestBody Categoria categoria) {
         //Usuario userCat = usuarioController.one(categoria.getUsuario().getId());
-       // categoria.setUsuario(userCat);
+        // categoria.setUsuario(userCat);
         return this.categoriaService.save(categoria);
     }
-
-    @GetMapping("/{id}")
-    public Categoria one(@PathVariable("id") Long id){ return this.categoriaService.one(id);}
 
     @PutMapping("/{id}")
     public Categoria replaceCat(@PathVariable("id") Long id, @RequestBody Categoria categoria) {
@@ -45,4 +69,16 @@ public class CategoriaControler {
     @DeleteMapping("/{id}")
     public void deleteCat(@PathVariable("id") Long id){this.categoriaService.delete(id);
     }
+    @GetMapping("/{id}")
+    public Categoria one(@PathVariable("id") Long id){ return this.categoriaService.one(id);}
+
+
+    /* 13 PRESUPUESTOS ***/
+    @GetMapping(("/boxCatMaxExpenses/{id}"))
+    public List<String> catBoxMaxExpenses(@PathVariable("id") Long id) {
+        List<String> listaCategoriaGastosMaximos = this.categoriaService.catBox(id);
+        listaCategoriaGastosMaximos.add("GLOBAL");
+        return listaCategoriaGastosMaximos;
+    }
+
 }

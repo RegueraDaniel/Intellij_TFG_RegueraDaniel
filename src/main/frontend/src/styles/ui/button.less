@@ -1,0 +1,247 @@
+/*Button Styles*/
+.ant-btn {
+
+  &:not(:last-child) {
+    margin-right: 15px;
+
+    @media screen and (max-width: @screen-xs-max) {
+      margin-right: 10px;
+    }
+
+    .ant-btn-group &,
+    .ant-transfer-operation & {
+      margin-right: 0;
+    }
+  }
+
+  @media screen and (max-width: @screen-xs-max) {
+    margin-bottom: 10px;
+  }
+
+  .ant-input-search & {
+    margin-bottom: 0;
+  }
+
+  .module-add-task & {
+    height: @btn-height-lg - 4px;
+
+    & .icon:before {
+      position: relative;
+      top: 2px;
+    }
+  }
+  .ant-modal-footer & {
+    margin-bottom: 0;
+  }
+
+  .login-content & {
+    padding: 9px 20px ;
+    height: auto;
+    line-height: 1;
+  }
+
+}
+
+.ant-btn-group {
+  &:not(:last-child) {
+    margin-right: 15px;
+
+    @media screen and (max-width: @screen-xs-max) {
+      margin-right: 10px;
+    }
+  }
+}
+
+.ant-radio-group {
+  & .ant-radio-button-wrapper {
+    margin-bottom: 6px;
+  }
+}
+
+button {
+  outline: none;
+}
+
+.ant-confirm .ant-confirm-btns button + button {
+  margin-bottom: 8px;
+}
+
+.btn,
+.btn {
+  display: inline-block;
+  font-weight: @btn-font-weight-bold;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: @border-style-base @border-width-base @btn-default-border;
+  //padding: @btn-padding-base;
+  height: @btn-height-base;
+  font-size: @font-size-base;
+  /* line-height: @btn-height-base; */
+  .border-radius(25px);
+
+  &:not(:last-child) {
+    margin-right: 15px;
+
+    @media screen and (max-width: @screen-xs-max) {
+      margin-right: 10px;
+    }
+  }
+
+  @media screen and (max-width: @screen-xs-max) {
+    margin-bottom: 10px;
+  }
+
+  &:focus,
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+  }
+
+  &.disabled,
+  &:disabled {
+    opacity: 0.35;
+    color: #fff;
+  }
+
+  &:not([disabled]):not(.disabled) {
+    cursor: pointer;
+  }
+
+  .btn-list & {
+    margin-bottom: 6px;
+  }
+
+  .sub-popover & {
+    border: 0 none;
+    margin-bottom: 5px;
+
+    &:focus,
+    &:hover {
+      background-color: @grey-3;
+    }
+
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+
+  .login-content & {
+    padding: 9px 20px ;
+    height: auto;
+    line-height: 1;
+  }
+}
+
+a.btn.disabled,
+fieldset[disabled] a.btn {
+  pointer-events: none;
+}
+
+.btn-rounded {
+  .border-radius(50px) ;
+}
+
+.btn-link {
+  font-size: @font-size-base;
+  font-weight: @btn-font-weight;
+  color: @color-primary;
+  background-color: transparent;
+
+  &:hover {
+    color: @color-primary-light;
+    text-decoration: underline;
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  &:focus,
+  &.focus {
+    text-decoration: underline;
+    border-color: transparent;
+  }
+
+  &:disabled,
+  &.disabled {
+    color: @grey-6;
+  }
+}
+
+.btn-lg,
+.btn-group-lg > .btn {
+  //padding: @btn-padding-lg;
+  font-size: @btn-font-size-lg;
+  line-height: @btn-height-lg;
+  .border-radius(6px);
+  height: @btn-height-lg;
+}
+
+.btn-sm,
+.btn-group-sm > .btn {
+  //padding: @btn-padding-sm;
+  font-size: @btn-font-size-sm;
+  line-height: @btn-height-sm;
+  .border-radius(2px);
+  height: @btn-height-sm;
+}
+
+.btn-xs {
+  font-size: @btn-font-size-xs;
+  //padding: @btn-padding-xs;
+  height: @btn-height-base - 10px;
+  line-height: @btn-height-base - 11px;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+
+  & + & {
+    margin-top: 0.5rem;
+  }
+}
+
+
+
+
+.icon-btn {
+  width: @size-40;
+  height: @size-40;
+  .border-radius(2px);
+  .flex-display(flex, row, wrap);
+  .justify-content(center);
+  .align-items(center);
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    background-color: fade(@black-color, 10%);
+
+    .layout-sider-dark & {
+      background-color: @sidebar-dark-bg;
+    }
+  }
+
+  .popover-header & {
+    width: @size-30;
+    height: @size-30;
+  }
+
+  & .icon-star-o:before,
+  & .icon-star:before {
+    position: relative;
+    top: 3px;
+  }
+
+  &.icon {
+    .module-box-content & {
+      @media screen and (max-width: @screen-xs-max) {
+        font-size: 16px;
+      }
+    }
+  }
+}

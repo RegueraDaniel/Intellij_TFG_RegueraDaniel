@@ -1,13 +1,7 @@
-import { PageContainer } from '@ant-design/pro-components';
-import { useModel } from '@umijs/max';
-import { Card, theme } from 'antd';
+import { theme, Col, Row, Button, Rate, Space } from 'antd';
 import React from 'react';
+import { history, useModel } from '@umijs/max';
 
-/**
- * 每个单独的卡片，为了复用样式抽成了组件
- * @param param0
- * @returns
- */
 const InfoCard: React.FC<{
   title: string;
   index: number;
@@ -87,77 +81,108 @@ const Welcome: React.FC = () => {
   const { token } = theme.useToken();
   const { initialState } = useModel('@@initialState');
   return (
-    <PageContainer>
-      <Card
-        style={{
-          borderRadius: 8,
-        }}
-        bodyStyle={{
-          backgroundImage:
-            initialState?.settings?.navTheme === 'realDark'
-              ? 'background-image: linear-gradient(75deg, #1A1B1F 0%, #191C1F 100%)'
-              : 'background-image: linear-gradient(75deg, #FBFDFF 0%, #F5F7FF 100%)',
-        }}
-      >
-        <div
-          style={{
-            backgroundPosition: '100% -30%',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: '274px auto',
-            backgroundImage:
-              "url('https://gw.alipayobjects.com/mdn/rms_a9745b/afts/img/A*BuFmQqsB2iAAAAAAAAAAAAAAARQnAQ')",
-          }}
-        >
-          <div
-            style={{
-              fontSize: '20px',
-              color: token.colorTextHeading,
-            }}
-          >
-            欢迎使用 Ant Design Pro
-          </div>
-          <p
-            style={{
-              fontSize: '14px',
-              color: token.colorTextSecondary,
-              lineHeight: '22px',
-              marginTop: 16,
-              marginBottom: 32,
-              width: '65%',
-            }}
-          >
-            Ant Design Pro 是一个整合了 umi，Ant Design 和 ProComponents
-            的脚手架方案。致力于在设计规范和基础组件的基础上，继续向上构建，提炼出典型模板/业务组件/配套设计资源，进一步提升企业级中后台产品设计研发过程中的『用户』和『设计者』的体验。
+    <div>
+      <Row className='text-white bg-green-gradient ' justify="center">
+        <Col span={8} className='pt-5 pb-5'>
+          <img src="img/ejemploweb.png" className='img w-75' />
+        </Col>
+        <Col span={8} className='pt-5 pb-5 '>
+          <p className='fs-lg'>
+            La mejor manera de arreglar la economía mundial es empezar por nuestra propia casa y gestionar una casa es lo mismo que una empresa. <br /> <br />
+            En ECONOFY puedes registrar tus gastos e ingresos a la vez que recibes pautas y estadísticas sobre cómo controlar el flujo
           </p>
-          <div
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: 16,
-            }}
-          >
-            <InfoCard
-              index={1}
-              href="https://umijs.org/docs/introduce/introduce"
-              title="了解 umi"
-              desc="umi 是一个可扩展的企业级前端应用框架,umi 以路由为基础的，同时支持配置式路由和约定式路由，保证路由的功能完备，并以此进行功能扩展。"
-            />
-            <InfoCard
-              index={2}
-              title="了解 ant design"
-              href="https://ant.design"
-              desc="antd 是基于 Ant Design 设计体系的 React UI 组件库，主要用于研发企业级中后台产品。"
-            />
-            <InfoCard
-              index={3}
-              title="了解 Pro Components"
-              href="https://procomponents.ant.design"
-              desc="ProComponents 是一个基于 Ant Design 做了更高抽象的模板组件，以 一个组件就是一个页面为开发理念，为中后台开发带来更好的体验。"
-            />
-          </div>
-        </div>
-      </Card>
-    </PageContainer>
+          <Button className='btn btn-default' onClick={() => history.push('/dashboard')}>Entra</Button>
+        </Col>
+      </Row>
+
+      <div className='text-white bg-green-gradient container-wave'>
+        <Row className='slider'>
+          <div className="wave"></div>
+        </Row>
+      </div>
+
+
+      <div className='container mt-4'>
+        <Row justify="center" gutter={20}>
+          <Col span={24}>
+            <h2 className='text-primary mb-3'>VENTAJAS DE USAR <img src="img/econofy_color_min.png" className='img w-25' /> </h2>
+          </Col>
+          <Col span={8}>
+            <div className="text-center">
+              <img src="img/ventaja1.jpg" className="mb-2" alt="" />
+              <h3>Toma el control: decide en qué gastar tu dinero.</h3>
+            </div>
+          </Col>
+          <Col span={8}>
+            <div className="text-center">
+              <img src="img/ventaja2.jpg" className="mb-2" alt="" />
+              <h3>Usa esta aplicación para evitar los números rojos.</h3>
+            </div>
+          </Col>
+          <Col span={8}>
+            <div className="text-center">
+              <img src="img/ventaja3.jpg" className="mb-2" alt="" />
+              <h3>Garantiza tu ahorro y cumple tus sueños.</h3>
+            </div>
+
+          </Col>
+        </Row>
+
+        <Row justify="center" className='mt-5'>
+
+          <Col span={24}>
+            <h2 className='text-primary mb-3'>TESTIMONIOS</h2>
+          </Col>
+          <Col span={8} className='text-center'>
+            <img src="img/persona1.jpg" className="rounded-circle testimonio-avatar p-1 bg-primary mb-3 mt-5" />
+            <h3>Iván</h3>
+            <Rate disabled defaultValue={5} />
+            <p className="fs-2 mb-5 mt-5">
+              <em>"La aplicación me dio las nociones que no tenía y usándola habitualmente logré ahorrar y comprarme la moto que quería."</em>
+            </p>
+          </Col>
+          <Col span={8} className='text-center'>
+            <img src="img/persona2.jpg" className="rounded-circle testimonio-avatar p-1 bg-primary  mb-3 mt-5" />
+            <h3>Fátima</h3>
+            <Rate disabled defaultValue={5} />
+            <p className="fs-2 mb-5 mt-5">
+              <em>"Estaba acomplejada de mi boca, pensando que no me podía permitir un dentista. Ahora soy una hormiguita ahorradora y sonriente."</em>
+            </p>
+          </Col>
+          <Col span={8} className='text-center'>
+            <img src="img/persona3.jpg" className="rounded-circle testimonio-avatar p-1 bg-primary mb-3 mt-5" />
+            <h3>Amelia</h3>
+            <Rate disabled defaultValue={5} />
+            <p className="fs-2 mb-5 mt-5">
+              <em>"Gracias a esta aplicación he dejado de vivir para trabajar y me organizo más escapadas que antes durante todo el año."</em>
+            </p>
+          </Col>
+
+        </Row>
+
+
+      </div >
+
+
+      <div className='bg-green-gradient container-wave'>
+        <Row className='slider'>
+          <div className="wave2"></div>
+        </Row>
+      </div>
+
+      <Row  justify="center" className='text-white bg-green-gradient text-center'>
+        <Col span={8} className='pt-5 pb-5'>
+          <img src="img/derecha.png" className='' />
+        </Col>
+        <Col span={8} className='pt-5 pb-5 mt-5'>
+          <p className='fs-xl'>
+            Crea diferentes perfiles para que todos los miembros de la familia ayuden a generar unas cuentas más claras y completas.
+          </p>
+          <Button className='btn btn-default' onClick={() => history.push('/login')}>Entra</Button>
+        </Col>
+      </Row>
+
+    </div >
   );
 };
 

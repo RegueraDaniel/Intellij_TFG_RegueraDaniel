@@ -2,6 +2,7 @@ package com.iesvdm.tfg_regueradaniel.service;
 import com.iesvdm.tfg_regueradaniel.domain.Movimiento;
 import com.iesvdm.tfg_regueradaniel.exception.MovimientoNotFoundException;
 import com.iesvdm.tfg_regueradaniel.repository.MovimientoRepository;
+import com.iesvdm.tfg_regueradaniel.repository.UsuarioRepository;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
@@ -11,16 +12,21 @@ public class MovimientoService {
 
     private MovimientoRepository movimientoRepository;
 
-
     public MovimientoService (MovimientoRepository movimientoRepository){
         this.movimientoRepository = movimientoRepository;
     }
 
     public List<Movimiento> all(){return this.movimientoRepository.findAll();}
 
+    /*11 MOVIMIENTOS ***/
+    public List<Movimiento> misMovimientos(Long id){
+        return this.movimientoRepository.findAllByUsuarioOrderByFechaDesc(id);
+    }
+
     public Movimiento save(@NotNull Movimiento movimiento){
         return this.movimientoRepository.save(movimiento);
     }
+
 
     public Movimiento one(Long id){
         return this.movimientoRepository.findById(id)

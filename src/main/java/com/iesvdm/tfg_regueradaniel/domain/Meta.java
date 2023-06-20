@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -22,10 +23,13 @@ public class Meta {
     @Column(name="id_goal")
     private Long id;
     @NotBlank
+    @NotNull
     private String nombre;
 
+    @NotNull
     private BigDecimal mensualidad;
 
+    @NotNull
     private BigDecimal importeTotal;
 
     private String fechaFinal;
