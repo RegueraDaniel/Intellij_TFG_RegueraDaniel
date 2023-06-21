@@ -1,6 +1,6 @@
 # ECONOFY
 
-ECONOFY es una aplicación web de gestión de gastos y ahorros personales desarrollada con Spring Boot.
+ECONOFY es una aplicación web desarrollada con Spring Boot para la gestión de gastos y ahorros personales .
 
 ![](https://github.com/RegueraDaniel/Intellij_TFG_RegueraDaniel/blob/master/imgReadme/econofy.gif.gif)
 > (Las imágenes utilizadas para la nimación pertenecen a la versión beta de la web)
@@ -9,6 +9,7 @@ ECONOFY es una aplicación web de gestión de gastos y ahorros personales desarr
 
 
 ![](https://github.com/RegueraDaniel/Intellij_TFG_RegueraDaniel/blob/master/imgReadme/rsz_econofy_color.png)
+
 
 # Descripción
 La aplicación proporciona las siguientes características principales:
@@ -30,7 +31,7 @@ La aplicación proporciona las siguientes características principales:
 # Instalación, dependencias y sus versiones
 Puedes clonar esta aplicación de una copia digital o bien descargarla de su repositorio: https://github.com/RegueraDaniel/Intellij_TFG_RegueraDaniel
 
-Para iniciar la parte de front deberás ubicarte en la carpeta adecuada (~\TFG_RegueraDaniel\src\main\frontend) y ejecutar en la tu CMD este comando que evitará los problemas de incompatibilidades entre las librerías:
+Para iniciar la parte de **front** deberás ubicarte en la carpeta adecuada (~\TFG_RegueraDaniel\src\main\frontend) y ejecutar en la tu CMD este comando que evitará los problemas de incompatibilidades entre las librerías:
 
 `npm install --force`
 
@@ -169,3 +170,124 @@ Importante: la ruta para el front es http://localhost:8000 y estas son las depen
 }
 
 ```
+
+Para el **back** es recomendable usar el mismo ide con el que se programó: IntelliJ IDEA 2022.3. 
+
+Lo primero es configurar el servidor y su conexión con la base de datos (en nuestro caso, workbench) que podrás encontrar en ~\TFG_RegueraDaniel\src\main\resources\application.properties. Es importante que en las dos primeras líneas sustituyas los valores [tuUsuarioBdd (nombre de **usuario**) y tuPassBdd (**contraseña**) incluido los asteriscos] por los que tienes en tu base de datos.
+
+
+```javascript
+spring.datasource.url=jdbc:mysql://localhost:3306/econofy?createDatabaseIfNotExist=true
+spring.datasource.username= ***tuUsuarioBdd***
+spring.datasource.password= ***tuPassBdd***
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+#datasource
+spring.datasource.name=econofy
+spring.datasource.generate-unique-name=false
+
+#jpa
+spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
+spring.jpa.show-sql=true
+
+spring.jpa.generate-ddl=true
+spring.jpa.hibernate.ddl-auto=update
+
+spring.jackson.serialization.FAIL_ON_EMPTY_BEANS=false
+
+```
+
+Nuestro back apunta al puerto 8080. Si quieres cambiar la de tu front, deberar alterar cada en cada uno de los controladores ( ~TFG_RegueraDaniel\src\main\java\com\iesvdm\tfg_regueradaniel\controller\) el valor de la variable @Crossorigin que puedes ver en esta imagen:
+
+![img_3.png](img_3.png)
+
+Una vez configurado el servidor bastará con arrancarlo. Cuando haya cargado por completo podremos poner en nuestro navegador la ruta del front y podremos usar la aplicación.
+
+Estas son las dependencias del back (pom.xml):
+
+```json
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.0.3</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.example</groupId>
+    <artifactId>Econofy</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>TFG_RegueraDaniel</name>
+    <description>TFG_RegueraDaniel</description>
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>[3.2.0,4.0.0]</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+
+```
+
+Dentro de los test, en la carpeta Postman (\TFG_RegueraDaniel\src\test\Postman) podrás encontrar las pruebas realizadas durante el desarrollo; si quieres hacer las tuyas es recomendable que revises los Json de las últimas pruebas (están relacionadas con las tareas de GitHub).
+
