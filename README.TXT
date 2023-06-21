@@ -1,6 +1,12 @@
-ECONOFY es una aplicación de gestión de gastos y ahorros personal desarrollada con Spring Boot.
+### ECONOFY 
 
-Descripción
+ECONOFY es una aplicación web de gestión de gastos y ahorros personales desarrollada con Spring Boot.
+
+# Descripción
+La aplicación proporciona las siguientes características principales:
+![](https://github.com/RegueraDaniel/Intellij_TFG_RegueraDaniel/blob/master/imgReadme/econofy.gif.gif)
+
+![](https://github.com/RegueraDaniel/Intellij_TFG_RegueraDaniel/blob/master/imgReadme/econofy.png) ![](https://www.65ymas.com/uploads/s1/76/67/78/foto_1_621x621.jpeg)
 Registro de gastos: Permite a los usuarios registrar y realizar un seguimiento de sus gastos diarios, clasificándolos por categorías (alimentación, transporte, entretenimiento, etc.).
 
 Registro de ahorros: Los usuarios pueden registrar y realizar un seguimiento de sus ahorros mensuales, estableciendo metas y visualizando su progreso.
