@@ -1,4 +1,4 @@
-#ECONOFY
+# ECONOFY
 
 ECONOFY es una aplicación web de gestión de gastos y ahorros personales desarrollada con Spring Boot.
 
@@ -27,12 +27,15 @@ La aplicación proporciona las siguientes características principales:
 
 •	Exportar los movimientos a Excel y CSV.
 
-#Instalación, dependencias y sus versiones
+# Instalación, dependencias y sus versiones
 Puedes clonar esta aplicación de una copia digital o bien descargarla de su repositorio: https://github.com/RegueraDaniel/Intellij_TFG_RegueraDaniel
 
 Para iniciar la parte de front deberás ubicarte en la carpeta adecuada (~\TFG_RegueraDaniel\src\main\frontend) y ejecutar en la tu CMD este comando que evitará los problemas de incompatibilidades entre las librerías:
+
 `npm install --force`
+
 Importante: la ruta para el front es http://localhost:8000 y estas son las dependencias (package.json):
+
 ```json
 {
   "name": "ant-design-pro",
