@@ -204,7 +204,7 @@ Una vez configurado el servidor bastará con arrancarlo. Cuando haya cargado por
 
 Estas son las dependencias del back (pom.xml):
 
-```json
+```php
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -289,5 +289,5 @@ Estas son las dependencias del back (pom.xml):
 
 ```
 
-Dentro de los test, en la carpeta Postman (\TFG_RegueraDaniel\src\test\Postman) podrás encontrar las pruebas realizadas durante el desarrollo; si quieres hacer las tuyas es recomendable que revises los Json de las últimas pruebas (están relacionadas con las tareas de GitHub).
+Dentro de los **test**, en la carpeta Postman (\TFG_RegueraDaniel\src\test\Postman) podrás encontrar las pruebas realizadas durante el desarrollo; si quieres hacer las tuyas es recomendable que revises los Json de las últimas pruebas (están relacionadas con las tareas de GitHub).
 
