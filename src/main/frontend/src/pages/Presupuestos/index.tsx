@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { history, useModel } from '@umijs/max';
-import { PlusCircleOutlined, ContainerOutlined, LineChartOutlined, TagOutlined, EuroCircleOutlined, CalendarOutlined } from '@ant-design/icons';
-import { Alert, Button, Card, DatePicker, Form, Input, Row, Col, Modal, Select, Space, List, Typography } from 'antd';
+import React, { useState, useEffect } from 'react';
+import { history } from '@umijs/max';
+import { EditOutlined, DeleteOutlined, ShoppingCartOutlined, CarOutlined, EuroCircleOutlined, CalendarOutlined } from '@ant-design/icons';
+import { Tooltip, Button, Card, DatePicker, Form, Input, Row, Col, Popconfirm, Select, Space, List, Typography } from 'antd';
 
 
 const { RangePicker } = DatePicker;
@@ -11,6 +11,14 @@ const { Text } = Typography;
 const Movimientos: React.FC = () => {
     const [form] = Form.useForm();
     const [formFilter, setFormFilter] = useState({});
+
+    useEffect(() => {
+        (async () => {
+            if (!localStorage.getItem("userLoginId")) {
+                history.push('/')
+            }
+        })();
+    }, []);
 
     const onChange = (pagination, filters, sorter, extra) => {
         console.log('params', pagination, filters, sorter, extra);
@@ -38,7 +46,7 @@ const Movimientos: React.FC = () => {
             <div className='container mt-4'>
 
                 <Row justify="center" gutter={12}>
-                    <Col span={12} className='pt-5 pb-5'>
+                    <Col xs={22} sm={22} md={22} lg={12} xl={12} className='pt-5 pb-5'>
                         <Card title="Gasto máximo mensual" >
                             <Form
                                 form={form}
@@ -114,7 +122,7 @@ const Movimientos: React.FC = () => {
 
                         </Card>
                     </Col>
-                    <Col span={12} className='pt-5 pb-5'>
+                    <Col xs={22} sm={22} md={22} lg={12} xl={12} className='pt-5 pb-5'>
                         <Card title="Ahorros">
                             <Form
                                 form={form}
@@ -125,7 +133,6 @@ const Movimientos: React.FC = () => {
                                 initialValues={{ remember: true }}
                                 autoComplete="off"
                             >
-
 
                                 <Form.Item name="Nombre" label="Nombre" className='ant-m-2'>
                                     <Input id='nombre' placeholder="Texto..." onChange={'handleUpdateFilterInput'} />
@@ -170,25 +177,36 @@ const Movimientos: React.FC = () => {
                             </Form>
                         </Card>
                     </Col>
-                    <Col span={12} className='pt-5 pb-5'>
+                    <Col xs={22} sm={22} md={12} lg={12} xl={12} className='pt-5 pb-5'>
                         <Card title="Gastos máximos" >
-                            <p>Card content</p>
-                            <p>Card content</p>
-                            <p>Card content</p>
+                            <div className="text-center">
+                                Global: 2000€ {<Tooltip title="Editar movimiento"><Button type="primary" shape="circle" icon={<EditOutlined />} size='small' style={{ margin: 5 }} /></Tooltip>}
+                                {<Popconfirm title="¿Quieres eliminar este movimiento de forma permanente?" icon={<DeleteOutlined />} onConfirm={(id) => changeRateStatus('delete', 1, record.id)}><Tooltip title="Eliminar Tarifa"><Button type="primary" shape="circle" icon={<DeleteOutlined />} size='small' style={{ margin: 5 }} /></Tooltip></Popconfirm>}
+                            </div>
+                            <div className="text-center">
+                                <ShoppingCartOutlined /> Ocio: 300€ {<Tooltip title="Editar movimiento"><Button type="primary" shape="circle" icon={<EditOutlined />} size='small' style={{ margin: 5 }} /></Tooltip>}
+                                {<Popconfirm title="¿Quieres eliminar este movimiento de forma permanente?" icon={<DeleteOutlined />} onConfirm={(id) => changeRateStatus('delete', 1, record.id)}><Tooltip title="Eliminar Tarifa"><Button type="primary" shape="circle" icon={<DeleteOutlined />} size='small' style={{ margin: 5 }} /></Tooltip></Popconfirm>}
+                            </div>
+                            <div className="text-center">
+                                <CarOutlined /> Transporte: 50€ {<Tooltip title="Editar movimiento"><Button type="primary" shape="circle" icon={<EditOutlined />} size='small' style={{ margin: 5 }} /></Tooltip>}
+                                {<Popconfirm title="¿Quieres eliminar este movimiento de forma permanente?" icon={<DeleteOutlined />} onConfirm={(id) => changeRateStatus('delete', 1, record.id)}><Tooltip title="Eliminar Tarifa"><Button type="primary" shape="circle" icon={<DeleteOutlined />} size='small' style={{ margin: 5 }} /></Tooltip></Popconfirm>}
+                            </div>
                         </Card>
                     </Col>
-                    <Col span={12} className='pt-5 pb-5'>
+                    <Col xs={22} sm={22} md={12} lg={12} xl={12} className='pt-5 pb-5'>
                         <Card title="Metas">
-                            <List
-                                header={<div>Header</div>}
-                                bordered
-                                dataSource={data}
-                                renderItem={(item) => (
-                                    <List.Item>
-                                        <Typography.Text mark>Moda/Belleza</Typography.Text> Moda/Belleza
-                                    </List.Item>
-                                )}
-                            />
+                            <div className="text-center">
+                                <h4> Viaje a Egipto {<Tooltip title="Editar movimiento"><Button type="primary" shape="circle" icon={<EditOutlined />} size='small' style={{ margin: 5 }} /></Tooltip>}
+                                    {<Popconfirm title="¿Quieres eliminar este movimiento de forma permanente?" icon={<DeleteOutlined />} onConfirm={(id) => changeRateStatus('delete', 1, record.id)}><Tooltip title="Eliminar Tarifa"><Button type="primary" shape="circle" icon={<DeleteOutlined />} size='small' style={{ margin: 5 }} /></Tooltip></Popconfirm>}
+                                </h4>
+                                <hr />
+                            </div>
+                            <div className="text-center">
+                                <p>Mensualidad: 100€ </p>
+                                <p>Total: 6000€ </p>
+                                <p>Fecha Prevista: 300€ </p>
+
+                            </div>
                         </Card>
                     </Col>
                 </Row>

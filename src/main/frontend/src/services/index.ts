@@ -12,3 +12,4 @@ export async function loginUser(body)  {
     data: body,
   }).then(response => {return response})
 }
+

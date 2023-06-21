@@ -7,9 +7,7 @@ import defaultSettings from '../config/defaultSettings';
 import { errorConfig } from './requestErrorConfig';
 import { currentUser as queryCurrentUser } from '@/services/ant-design-pro/api';
 import React from 'react';
-import { AvatarDropdown, AvatarName } from '@/components';
-const isDev = process.env.NODE_ENV === 'development';
-const loginPath = '/user/login';
+import { AvatarDropdown } from '@/components';
 const homePath = '/';
 import { MenuUser } from '@/components';
 
@@ -52,44 +50,32 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
     disableContentMargin: false,
     avatarProps: {
       src: initialState?.currentUser?.avatar,
-      title: <AvatarName />,
       render: (_, avatarChildren) => {
         let algo = {}
         if (initialState) {
-          algo = <AvatarDropdown>{avatarChildren}1</AvatarDropdown>;
+          algo = <AvatarDropdown>{avatarChildren}</AvatarDropdown>;
         } else {
-          algo = <AvatarDropdown>{avatarChildren}2</AvatarDropdown>;
+          algo = <AvatarDropdown>{avatarChildren}</AvatarDropdown>;
         }
         return algo
       },
     },
-
-
     waterMarkProps: {
       content: initialState?.currentUser?.name,
     },
     footerRender: () => <Footer />,
     onPageChange: () => {
       const { location } = history;
-      console.log(location.pathname)
-      console.log(!initialState?.currentUser)
-
       if (!initialState?.currentUser && location.pathname == homePath) {
-        console.log('Entra')
         history.push(homePath);
       }
-
-      /*if (!initialState?.currentUser && location.pathname !== loginPath) {
-        history.push(loginPath);
-      }*/
-
     },
     menuHeaderRender: undefined,
     childrenRender: (children) => {
       return (
         <>
           <div className='bg-white'>
-            {!initialState?.currentUser && <MenuUser className='mt-3'/>}
+            {localStorage.getItem("userLoginId") && <MenuUser className='mt-3'/>}
             {children}
           </div>
         </>

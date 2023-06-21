@@ -1,0 +1,14 @@
+import * as FileSaver from 'file-saver';
+import XLSX from 'sheetjs-style';
+
+const exportToExcel = async ( excelData, fileName ) => {
+    const fileType = 'application/vnd.openxmlformats-officedocument.spreadsheet.sheet;charset=UTF-8';
+    const fileExtension = '.csv';
+    const ws = XLSX.utils.json_to_sheet(excelData);
+    const wb = { Sheets: { 'data': ws }, SheetNames: ['data'] };
+    const excelBuffer = XLSX.write(wb, { bookType: 'csv', type: 'array' });
+    const data = new Blob([excelBuffer], { type: fileType });
+    FileSaver.saveAs(data, fileName + fileExtension);
+}
+
+export default exportToExcel;

@@ -7,19 +7,12 @@ import { Card, Radio, Row, Col, Switch, Space, Spin, Button, Alert, Popconfirm, 
 
 
 const Footer: React.FC = () => {
-  const intl = useIntl();
-  const defaultMessage = intl.formatMessage({
-    id: 'app.copyright.produced',
-    defaultMessage: '蚂蚁集团体验技术部出品',
-  });
-
-  const currentYear = new Date().getFullYear();
 
   return (
     <div className='bg-green-gradient text-white'>
       <hr />
       <Row className='container mt-3' justify="center">
-        <Col className="" span={8}>
+        <Col xs={24} sm={12} md={8} lg={8} xl={8} >
           <ul className="footer-list">
             <li><p className="font-weight-bold">Nuestra empresa</p></li>
             <hr />
@@ -33,7 +26,7 @@ const Footer: React.FC = () => {
             </li>
           </ul>
         </Col>
-        <Col span={8}>
+        <Col xs={24} sm={12} md={8} lg={8} xl={8} >
           <ul className="footer-list">
             <li><p className="font-weight-bold">Avisos legales</p></li>
             <hr />
@@ -43,7 +36,7 @@ const Footer: React.FC = () => {
             <li><a href="#" className="text-white">Términos y condiciones</a></li>
           </ul>
         </Col>
-        <Col className="" span={8}>
+        <Col  xs={24} sm={12} md={8} lg={8} xl={8} >
           <ul className="footer-list">
             <li><p className="font-weight-bold">Contacto</p></li>
             <hr />

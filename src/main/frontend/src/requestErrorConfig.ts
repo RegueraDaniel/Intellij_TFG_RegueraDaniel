@@ -64,16 +64,6 @@ export const errorConfig: RequestConfig = {
               message.error(errorMessage);
           }
         }
-      } else if (error.response) {
-
-
-        message.error(`Response status:${error.response.status}`);
-      } else if (error.request) {
-
-        message.error('None response! Please retry.');
-      } else {
-
-        message.error('Request error, please retry.');
       }
     },
   },

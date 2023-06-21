@@ -1,26 +1,34 @@
 [
     {
-        "type": "分类一",
-        "value": 27
+        "type": "Moda/Belleza",
+        "value": 9.50
     },
     {
-        "type": "分类二",
-        "value": 25
+        "type": "Pago",
+        "value": 14.30
     },
     {
-        "type": "分类三",
-        "value": 18
+        "type": "Hogar",
+        "value": 7.80
     },
     {
-        "type": "分类四",
-        "value": 15
+        "type": "Compras",
+        "value": 24.10
     },
     {
-        "type": "分类五",
-        "value": 10
+        "type": "Ocio",
+        "value": 25.00
     },
     {
-        "type": "其他",
-        "value": 5
+        "type": "Salud",
+        "value": 10.00
+    },
+    {
+        "type": "Transporte",
+        "value": 5.50
+    },
+    {
+        "type": "Restauración",
+        "value": 1.30
     }
 ]

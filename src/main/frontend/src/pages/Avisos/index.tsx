@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PlusCircleOutlined, ContainerOutlined, LineChartOutlined, TagOutlined, EuroCircleOutlined, CalendarOutlined } from '@ant-design/icons';
 import { Calendar, Button, Badge, DatePicker, Form, Input, Row, Col, Modal, Select, Space, Table, Typography } from 'antd';
 import type { Dayjs } from 'dayjs';
 import type { CalendarMode } from 'antd/es/calendar/generateCalendar';
+import { history } from '@umijs/max';
 
 const { RangePicker } = DatePicker;
 const dateFormat = 'YYYY-MM-DD';
@@ -45,6 +46,14 @@ const getMonthData = (value: Dayjs) => {
 
 const Movimientos: React.FC = () => {
     const [form] = Form.useForm();
+
+    useEffect(() => {
+        (async () => {
+            if (!localStorage.getItem("userLoginId")) {
+                history.push('/')
+            }
+        })();
+    }, []);
 
     const handleFilter = (value) => {
         //buscarMovimientos();
