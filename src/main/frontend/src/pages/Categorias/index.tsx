@@ -36,7 +36,7 @@ const Movimientos: React.FC = () => {
         <div className='d-flex justify-content-center '>
             <div className=' bg-green-gradient rounded-circle div-icon-dashboard-min d-flex justify-content-center'>
                 <SkinOutlined className='icon-dashboard-min ' />
-            </div><h4 className='ml-4'>Moda/Belleza</h4>
+            </div><h4 className='ml-4'>Moda</h4>
         </div>,
         <div className='d-flex justify-content-center '>
             <div className=' bg-green-gradient rounded-circle div-icon-dashboard-min d-flex justify-content-center'>

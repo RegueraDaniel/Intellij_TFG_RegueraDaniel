@@ -1,15 +1,11 @@
-import { Footer } from '@/components';
-import { LinkOutlined } from '@ant-design/icons';
+import { AvatarDropdown, Footer, MenuUser } from '@/components';
+import { currentUser as queryCurrentUser } from '@/services/ant-design-pro/api';
 import type { Settings as LayoutSettings } from '@ant-design/pro-components';
 import type { RunTimeLayoutConfig } from '@umijs/max';
-import { history, Link } from '@umijs/max';
+import { history } from '@umijs/max';
 import defaultSettings from '../config/defaultSettings';
 import { errorConfig } from './requestErrorConfig';
-import { currentUser as queryCurrentUser } from '@/services/ant-design-pro/api';
-import React from 'react';
-import { AvatarDropdown } from '@/components';
 const homePath = '/';
-import { MenuUser } from '@/components';
 
 export async function getInitialState(): Promise<{
   settings?: Partial<LayoutSettings>;
@@ -31,51 +27,33 @@ export async function getInitialState(): Promise<{
 
   const { location } = history;
   if (location.pathname !== homePath) {
-    const currentUser = await fetchUserInfo();
+    //const currentUser = await fetchUserInfo();
     return {
-      fetchUserInfo,
-      currentUser,
+      //fetchUserInfo,
+      //currentUser,
       settings: defaultSettings as Partial<LayoutSettings>,
     };
   }
   return {
-    fetchUserInfo,
+    //fetchUserInfo,
     settings: defaultSettings as Partial<LayoutSettings>,
   };
 }
 
-export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) => {
+export const layout: RunTimeLayoutConfig = ({ initialState }) => {
   return {
-    rightContentRender: () => '',
-    disableContentMargin: false,
     avatarProps: {
       src: initialState?.currentUser?.avatar,
       render: (_, avatarChildren) => {
-        let algo = {}
-        if (initialState) {
-          algo = <AvatarDropdown>{avatarChildren}</AvatarDropdown>;
-        } else {
-          algo = <AvatarDropdown>{avatarChildren}</AvatarDropdown>;
-        }
-        return algo
+        return <AvatarDropdown>{avatarChildren}</AvatarDropdown>;
       },
     },
-    waterMarkProps: {
-      content: initialState?.currentUser?.name,
-    },
     footerRender: () => <Footer />,
-    onPageChange: () => {
-      const { location } = history;
-      if (!initialState?.currentUser && location.pathname == homePath) {
-        history.push(homePath);
-      }
-    },
-    menuHeaderRender: undefined,
     childrenRender: (children) => {
       return (
         <>
-          <div className='bg-white'>
-            {localStorage.getItem("userLoginId") && <MenuUser className='mt-3'/>}
+          <div className="bg-white">
+            {localStorage.getItem('userLoginId') && <MenuUser className="mt-3" />}
             {children}
           </div>
         </>

@@ -26,9 +26,9 @@ public class Aviso {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_not")
     private Long id;
-    @Enumerated(EnumType.STRING)
+
     @Size(max = 20)
-    private TipoAviso tipo;
+    private String tipo;
 
     private String icono;
 

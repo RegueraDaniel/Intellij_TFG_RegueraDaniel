@@ -5,7 +5,6 @@
     name: '',
     component: './Welcome',
   },
-
   {
     path: '/login',
     name: '',
@@ -16,10 +15,6 @@
     name: '',
     component: './Registro',
   },
-
-
-
-
   {
     path: '/dashboard',
     name: '',
@@ -50,8 +45,6 @@
     name: '',
     component: './Informes',
   },
-
-
   {
     path: '*',
     layout: false,

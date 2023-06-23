@@ -8,6 +8,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -53,7 +54,7 @@ public class Categoria {
     private Usuario usuario;
 
     @OneToMany(mappedBy = "categoria",
-            cascade = {CascadeType.REMOVE})
+            cascade = {CascadeType.MERGE})
     private List<Movimiento> movimientos;
 
 }

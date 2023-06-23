@@ -33,5 +33,8 @@ public interface CategoriaRepository extends JpaRepository<Categoria, Long>{
     List<String> listaNombreCat(@Param("id") Long id);
 
 
+    @Query(value="select * from categories where id_usu = :usuarioId and nombre_cat = :nombreCat",nativeQuery = true)
+
+    Categoria findCategoriaByNombreAndUsuarioId(@Param("nombreCat") String nombreCat, @Param("usuarioId") Long usuarioId);
 }
 

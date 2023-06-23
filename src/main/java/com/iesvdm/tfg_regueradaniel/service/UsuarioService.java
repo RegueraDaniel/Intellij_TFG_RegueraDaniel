@@ -26,6 +26,7 @@ public class UsuarioService {
                           SecurityConfig securityConfig,
                           CategoriaRepository categoriaRepository,
                           CategoriaService categoriaService){
+
         this.usuarioRepository = usuarioRepository;
         this.securityConfig = securityConfig;
         this.categoriaRepository = categoriaRepository;
@@ -98,6 +99,15 @@ public class UsuarioService {
         return miUsuario.getMaxGastoGlobal().intValue();
     }
 
+    /*public Integer obtenerGlobalConConsultas(Long id) {
+    Usuario usuario = usuarioRepository.findById(id);
+    usuario.setEstadisticasMes(categoriaService.estadisticasMes(id));
+    usuario.setMisGastosMaxInicializados(categoriaService.misGastosMaxInicializados(id));
+    usuario.setHistorico(categoriaService.historico(id));
+    usuario.setGlobal(obtenerGlobal(id));
+    return usuario.getGlobal();
+    }*/
+
     private void checkEmail(Usuario usuario){
         Optional<Usuario> yaExisteMail;
         if(usuario.getId() == -1){
@@ -123,12 +133,17 @@ public class UsuarioService {
     }
 
     public void delete(Long id){
-        this.usuarioRepository.findById(id).map(p ->{
-            this.usuarioRepository.delete(p);
-            return p;
-        }).orElseThrow(() -> new UsuarioNotFoundException(id));
-    }
+        Usuario usuario = this.usuarioRepository.findById(id)
+                .orElseThrow(() -> new UsuarioNotFoundException(id));
 
+        // Eliminar todas las categorías asociadas al usuario
+        List<Categoria> categorias = usuario.getCategorias();
+        for (Categoria categoria : categorias) {
+            this.categoriaService.delete(categoria.getId());
+        }
+
+        this.usuarioRepository.delete(usuario);
+    }
 
 
     /* 13 PRESUPUESTOS ***/

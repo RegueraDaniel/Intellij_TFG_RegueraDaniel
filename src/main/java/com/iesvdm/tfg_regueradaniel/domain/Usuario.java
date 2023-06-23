@@ -56,18 +56,26 @@ public class Usuario {
     @Size(max = 50)
     private String urlImg;
 
+    //Dashboard
+    //@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    ///private Estadistica estadisticas;
+
     private BigDecimal maxGastoGlobal;
 
+    //private List<Object[]> estadisticasMes;
+    //private List<Categoria> misGastosMaxInicializados;
+    //private List<Object[]> historico;
+
     @OneToMany(mappedBy = "usuario",
-            cascade = {CascadeType.REMOVE})
+            cascade = {CascadeType.MERGE})
     private List<Categoria> categorias;
 
     @OneToMany(mappedBy = "usuario",
-            cascade = {CascadeType.REMOVE})
+            cascade = {CascadeType.MERGE})
     private List<Meta> metas;
 
     @OneToMany(mappedBy = "usuario",
-            cascade = {CascadeType.REMOVE})
+            cascade = {CascadeType.MERGE})
     private List<Aviso> avisos;
 
 

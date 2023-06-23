@@ -36,13 +36,17 @@ public class Movimiento {
 
     private String descripcion;
 
-    //url a foto
-    private String foto;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @ToString.Exclude
     @JoinColumn(name = "id_cat", nullable = false)
     private Categoria categoria;
+
+    public Movimiento(String fecha, BigDecimal importe, String descripcion, Categoria categoria) {
+        this.fecha = fecha;
+        this.importe = importe;
+        this.descripcion = descripcion;
+        this.categoria = categoria;
+    }
 
 }
